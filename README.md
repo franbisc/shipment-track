@@ -1,7 +1,7 @@
 # shipment-track
 This script is just an exercise involving web scraping: it allows to call an url/endpoint with courier and package information and obtain the shipment status
 
-The possible couriers (Italian territory) are:
+The possible couriers (Italian territory) are:<br>
  TNT --> 'TNT-ITA'<br>
  UPS --> 'UPS'<br>
  DHL --> 'DHL'<br>
