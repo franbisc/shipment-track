@@ -64,7 +64,7 @@ general.get('/:trackingCode', function(request, res) {
 
     var lastUpdateVar = '';
     var cityVar = '';
-    var statoVar = '';
+    var statusVar = '';
     var jsonRes = {};
 
     req( urlRequest, function (error, response, html) {
@@ -77,14 +77,14 @@ general.get('/:trackingCode', function(request, res) {
             lastUpdateVar = $(this).text();
           });
           $('tbody>:nth-child(1)> :nth-child(3)').each(function(i, element){
-            statoVar = $(this).text();
+            statusVar = $(this).text();
           });
           $('tbody>:nth-child(1)> :nth-child(4)').each(function(i, element){
             cityVar = $(this).text();
           });
     }
 
-    jsonRes = {lastUpdate: lastUpdateVar, city: cityVar, state: statoVar };
+    jsonRes = {lastUpdate: lastUpdateVar, city: cityVar, state: statusVar };
     console.log("JSON " + JSON.stringify(jsonRes));
 
     res.contentType('application/json');
@@ -104,7 +104,7 @@ PTI.get('/:trackingCode', function(request, res) {
 
     var lastUpdateVar = "";
     var cityVar = "";
-    var statoVar ="";
+    var statusVar ="";
     var json = {};
 
     req( urlRequest, function (error, response, html) {
@@ -117,14 +117,14 @@ PTI.get('/:trackingCode', function(request, res) {
             lastUpdateVar = $(this).text();
           });
           $('tbody> tr:last-child> :nth-child(3)').each(function(i, element){
-            statoVar = $(this).text();
+            statusVar = $(this).text();
           });
           $('tbody> tr:last-child> :nth-child(4)').each(function(i, element){
             cityVar = $(this).text();
           });
     }
   
-    jsonRes = {lastUpdate: lastUpdateVar, city: cityVar, state: statoVar };
+    jsonRes = {lastUpdate: lastUpdateVar, city: cityVar, state: statusVar };
     console.log("JSON " + JSON.stringify(jsonRes));
 
     res.contentType('application/json');
